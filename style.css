@@ -1,0 +1,109 @@
+body {
+font-family: roboto;
+background: url("stars.jpg") no-repeat center top;
+width: 100%;
+height: 100%;
+margin: 0;
+overflow: hidden; /* Evite la scrollbar */
+
+/* Center items */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.logo {
+	position: absolute;
+	top: 45%;
+	animation-delay: 2s;
+	animation-timing-function: ease-out;
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+ 
+ @keyframes zoomOut {
+  0% {
+  opacity: 0;
+  }
+  10%{
+  	opacity: 1;
+  }
+  50% {
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+}
+} 
+
+.time {
+	position: absolute;
+	top: 45%;
+	font-size: 32px;
+	color: #61c2d0;
+	opacity:0;
+	animation-delay: 1s;
+	animation-duration: 1s;
+	animation-name: time;
+	animation-timing-function: ease-out;
+}
+
+@keyframes time {
+	0% {
+		opacity:0;
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.crawl {
+/* centrage de l'élément' */
+position: absolute;
+top: 45%;
+left: 50%;
+width: 1100px;
+margin: 0 0 0 -550px;
+top: auto;
+bottom: 0;
+height: 50em;
+
+color: #ffff66;;
+font-size: 50px;
+text-align: justify;
+transform-origin: center bottom;
+transform: perspective(300px) rotateX(25deg);
+}
+
+.crawl > div {
+/* positionne la div en bas de l'écran (non visible) /
+/ l'animation la fait remonter progressivement */
+position: absolute;
+top: 100%;
+animation-delay: 5s;
+animation-duration: 30s;
+animation-name: crawl;
+animation-timing-function: linear;
+}
+
+@keyframes crawl {
+0% {
+top: 100%;
+opacity: 1;
+}
+80% {
+		opacity: 1; /*avant disparition*/
+	}
+100% {
+	top: 0%;
+	opacity: 0;
+	}
